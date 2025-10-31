@@ -1,0 +1,21 @@
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  annotations:
+    openshift.io/sa.scc.mcs: s0:c29,c14
+    openshift.io/sa.scc.supplemental-groups: 1000840000/10000
+    openshift.io/sa.scc.uid-range: 1000840000/10000
+    security.openshift.io/MinimallySufficientPodSecurityStandard: restricted
+  labels:
+    app.kubernetes.io/instance: pro-reversewords
+    dynakube.internal.dynatrace.com/instance: openshift-sdm
+    kubernetes.io/metadata.name: reverse-words
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/audit-version: latest
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: latest
+  name: reverse-words
+spec:
+  finalizers:
+  - kubernetes
+
