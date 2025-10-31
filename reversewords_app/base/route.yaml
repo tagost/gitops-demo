@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: reverse-words
+  namespace: reverse-words
+spec:
+  host: reverse-words-reverse-words.apps.ocpsudameris.lab.data.com.py
+  to:
+    kind: Service
+    name: reverse-words
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
